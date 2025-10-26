@@ -116,6 +116,11 @@ valkey-cluster/
 scripts/setup-cluster.sh
 scripts/stop-cluster.sh
 
+# Valkey runtime files
+.valkey-cluster/
+dump.rdb
+appendonly.aof
+
 # Docker Compose files - legacy/unused (we use scripts/start-test-servers.sh instead)
 docker-compose*.yml
 .claude/
