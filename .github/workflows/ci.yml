@@ -34,6 +34,11 @@ jobs:
         with:
           node-version: '22'
           cache: 'npm'
+      - name: Setup Valkey
+        run: |
+          sudo apt-get update
+          sudo apt-get -y --no-install-recommends install valkey
+          sudo systemctl start valkey-server
       - run: npm ci
       - run: npm run build
       - run: npm run test:standalone
@@ -46,6 +51,11 @@ jobs:
         with:
           node-version: '22'
           cache: 'npm'
+      - name: Install Valkey
+        run: |
+          sudo apt-get update
+          sudo apt-get -y --no-install-recommends install valkey
+          sudo systemctl start valkey-server
       - run: npm ci
       - run: npm run build
       - run: npm run test:cluster
@@ -58,6 +68,11 @@ jobs:
         with:
           node-version: '22'
           cache: 'npm'
+      - name: Install Valkey
+        run: |
+          sudo apt-get update
+          sudo apt-get -y --no-install-recommends install valkey
+          sudo systemctl start valkey-server
       - run: npm ci
       - run: npm run build
       - run: npm run test:json
