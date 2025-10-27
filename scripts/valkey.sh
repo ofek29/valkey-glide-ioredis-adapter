@@ -129,9 +129,10 @@ start_cluster() {
     
     # Create cluster
     echo -e "${BLUE}  Creating cluster...${NC}"
-    yes yes | valkey-cli --cluster create \
+    valkey-cli --cluster create \
         127.0.0.1:17000 127.0.0.1:17001 127.0.0.1:17002 \
         --cluster-replicas 0 \
+        --cluster-yes \
         >/dev/null 2>&1 || true
     
     sleep 2
