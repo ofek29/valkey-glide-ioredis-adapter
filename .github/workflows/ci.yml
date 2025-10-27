@@ -37,7 +37,7 @@ jobs:
       - name: Setup Valkey
         run: |
           sudo apt-get update
-          sudo apt-get -y --no-install-recommends install valkey netcat
+          sudo apt-get -y --no-install-recommends install valkey netcat-openbsd
           sudo systemctl start valkey-server
       - run: npm ci
       - run: npm run build
@@ -54,7 +54,7 @@ jobs:
       - name: Install Valkey
         run: |
           sudo apt-get update
-          sudo apt-get -y --no-install-recommends install valkey netcat
+          sudo apt-get -y --no-install-recommends install valkey netcat-openbsd
           sudo systemctl start valkey-server
       - run: npm ci
       - run: npm run build
@@ -71,7 +71,7 @@ jobs:
       - name: Install Valkey
         run: |
           sudo apt-get update
-          sudo apt-get -y --no-install-recommends install valkey netcat
+          sudo apt-get -y --no-install-recommends install valkey netcat-openbsd
           sudo systemctl start valkey-server
       - run: npm ci
       - run: npm run build
